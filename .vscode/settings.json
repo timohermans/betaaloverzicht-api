@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3333,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "local",
+            "database": "app_db",
+            "username": "web_admin"
+        }
+    ]
+}
