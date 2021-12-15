@@ -2,13 +2,13 @@ version: "3.8"
 services:
   db:
     image: postgres:14.1
-    volumes: 
-      - db-data:/var/lib/postgresql/data
+    volumes:
+      - db-data:/data/betaaloverzicht
       - "./postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
     ports:
       - "3333:5432"
     env_file: .env
-    
+
   api:
     image: postgrest/postgrest
     ports:
