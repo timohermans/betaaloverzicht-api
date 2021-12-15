@@ -1,5 +1,9 @@
 # CRUD API
 
+## JWKS certificate
+
+[Grab it here](https://<auth0 domain>.eu.auth0.com/.well-known/jwks.json)
+
 ## Docker caveats
 
 Make sure the developer machine is NTP time synced.
