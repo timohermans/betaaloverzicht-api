@@ -23,7 +23,7 @@ services:
       - server
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.betaaloverzichtapi.rule=HOST(`budget.timohermans.nl`)&&PathPrefix(`/api{regex:$$|/.*}`)"
+      - "traefik.http.routers.betaaloverzichtapi.rule=HOST(`dbadmin.timohermans.nl`)"
       - "traefik.http.services.betaaloverzichtapi.loadbalancer.server.port=3000"
 
 volumes:
