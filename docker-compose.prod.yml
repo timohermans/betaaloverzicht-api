@@ -8,12 +8,14 @@ services:
       - "./postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
       - "./scripts:/scripts"
     env_file: .env
+    networks:
+      - server
 
   betaaloverzichtapi:
     image: postgrest/postgrest
     restart: unless-stopped
     depends_on:
-      - db
+      - betaaloverzichtdb
     env_file: .env
     volumes:
       - "./certs/:/opt/config/"
