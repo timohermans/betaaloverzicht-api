@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  betaaloverzichtdb:
+    image: postgres:14.1
+    restart: unless-stopped
+    volumes:
+      - db-data:/data/betaaloverzicht
+      - "./postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
+      - "./scripts:/scripts"
+    env_file: .env
+
+  betaaloverzichtapi:
+    image: postgrest/postgrest
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file: .env
+    volumes:
+      - "./certs/:/opt/config/"
+    networks:
+      - server
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.betaaloverzichtapi.rule=HOST(`budget.timohermans.nl`)&&PathPrefix(`/api{regex:$$|/.*}`)"
+      - "traefik.http.services.betaaloverzichtapi.loadbalancer.server.port=3000"
+
+volumes:
+  db-data:
+
+networks:
+  server:
+    external: true
