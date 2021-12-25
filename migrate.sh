@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## TODO: (L) Change the containername to something dynamic (second argument perhaps)
+
 echo "loading environment variables from .env"
 if [ -f .env ]
 then
