@@ -1,5 +1,7 @@
 # CRUD API
 
+[![Build Status](https://ci.timohermans.nl/api/badges/timohermans/betaaloverzicht-api/status.svg?ref=refs/heads/main)](https://ci.timohermans.nl/timohermans/betaaloverzicht-api)
+
 ## JWKS certificate
 
 [Grab it here](https://<auth0 domain>.eu.auth0.com/.well-known/jwks.json)
