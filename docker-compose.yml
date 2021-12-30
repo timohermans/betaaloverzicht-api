@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  db:
+  betaaloverzichtdb:
     image: postgres:14.1
     volumes:
       - db-data:/data/betaaloverzicht
@@ -15,7 +15,7 @@ services:
     ports:
       - "2222:3000"
     depends_on:
-      - db
+      - betaaloverzichtdb
     env_file: .env
     volumes:
       - "./certs/:/opt/config/"

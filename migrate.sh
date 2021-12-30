@@ -5,7 +5,9 @@
 echo "loading environment variables from .env"
 if [ -f .env ]
 then
-  export $(cat .env | sed 's/#.*//g' | xargs)
+  set -o allexport
+  source .env
+  set +o allexport
 fi
 echo "environment loaded"
 
